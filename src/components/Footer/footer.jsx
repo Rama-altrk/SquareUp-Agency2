@@ -1,11 +1,10 @@
-
-import Logo from './../Logo/logo'
-import './footer.css'
+import Logo from './../Logo/logo';
+import './footer.css';
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
 import { MdEmail, MdPhone, MdLocationOn } from 'react-icons/md';
 
 const Footer = () => {
-    const navLinks = [
+  const navLinks = [
     { name: 'Home', path: '#' },
     { name: 'Services', path: '#' },
     { name: 'Work', path: '#' },
@@ -13,27 +12,48 @@ const Footer = () => {
     { name: 'About', path: '#' },
     { name: 'Careers', path: '#' },
     { name: 'Contact', path: '#' },
-  ]; 
+  ];
+
   return (
     <footer className="footer-container">
       <div className="footer-top">
-        
         <div className="footer-brand-nav">
-            <Logo />
-            <ul className="footer-nav">
-              {navLinks.map((link, index) => (
-                <li key={index}>
-                  <a href={link.path}>{link.name}</a>
-                </li>
-              ))}
-            </ul>
+          <Logo />
+          <ul className="footer-nav">
+            {navLinks.map((link, index) => (
+              <li key={index}>
+                <a href={link.path}>{link.name}</a>
+              </li>
+            ))}
+          </ul>
         </div>
         <div className="social-wrapper">
           <span className="social-label">Stay Connected</span>
           <div className="social-box">
-            <a href="#" aria-label="Facebook"><div className='rtFacebook'><FaFacebookF /></div></a>
-            <a href="#" aria-label="Twitter"><div className='rtTwitter'><FaTwitter /></div></a>
-            <a href="#" aria-label="LinkedIn"><div className='rtLinkedIn'><FaLinkedinIn /></div></a>
+            <a 
+              href="https://facebook.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              aria-label="Facebook"
+            >
+              <div className="rtFacebook"><FaFacebookF /></div>
+            </a>
+            <a 
+              href="https://twitter.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              aria-label="Twitter"
+            >
+              <div className="rtTwitter"><FaTwitter /></div>
+            </a>
+            <a 
+              href="https://linkedin.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              aria-label="LinkedIn"
+            >
+              <div className="rtLinkedIn"><FaLinkedinIn /></div>
+            </a>
           </div>
         </div>
       </div>
