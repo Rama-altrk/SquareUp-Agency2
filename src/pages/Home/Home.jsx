@@ -11,10 +11,39 @@ import Faq from '../../components/FaqSection/Faq'
 import WorkProjectForm from '../../components/WorkForm/WorkForm';
 import { useState ,useEffect} from 'react';
 import { useLocation } from 'react-router-dom';
-import { getItemFromLocalstorage } from '../../utils/localstorage';
+import { getItemFromLocalstorage, setItemInLocalstorage } from '../../utils/localstorage';
 
 const SERVICES_KEY = 'rtServicesStorage'
 const CHOOSE_KEY = 'rtChooseStorage'
+const CardInit = [
+    {
+        id: 1,
+        cardImg: "/img/homeImg/ExpertiseIcon.png",
+        cardTitle: "Expertise",
+        contentCard: "Our team consists of highly skilled professionals who have a deep understanding of the digital landscape. We stay updated with the latest industry trends and best practices to deliver cutting-edge solutions.",
+    },
+
+    {
+        id: 2,
+        cardImg: "/img/homeImg/ClientCentricIcon.png",
+        cardTitle: "Client-Centric Approach",
+        contentCard: "We prioritize our clients and their unique needs. We listen to your ideas, challenges, and goals, and tailor our services to meet your specific requirements. Your success is our success.",
+
+    },
+
+    {
+        id: 3,
+        cardImg: "/img/homeImg/Results-DrivenIcon.png",
+        cardTitle: "Results-Driven Solutions",
+        contentCard: "Our primary focus is on delivering results. We combine creativity and technical expertise to create digital products that drive business growth, enhance user experiences, and provide a competitive advantage.",
+    },
+    {
+        id: 4,
+        cardImg: "/img/homeImg/CollaborativeIcon.png",
+        cardTitle: "Collaborative Partnership",
+        contentCard: "We value long-term relationships with our clients. We see ourselves as your digital partner, providing ongoing support, maintenance, and updates to ensure your digital products continue to thrive.",
+    }
+]
 export default function Home() {
 
     const [services , setServices] = useState(()=>{
@@ -29,7 +58,12 @@ export default function Home() {
     },[location.key])
 
     const [chooseCard , setChooseCard] = useState(()=>{
-        return getItemFromLocalstorage(CHOOSE_KEY)
+        const saved = getItemFromLocalstorage(CHOOSE_KEY)
+        if(!saved || saved.length === 0){
+            setItemInLocalstorage(CHOOSE_KEY , CardInit)
+            return CardInit
+        }
+        return saved
     })
     useEffect(()=>{
         const saved = getItemFromLocalstorage(CHOOSE_KEY)
@@ -140,35 +174,35 @@ export default function Home() {
     ];
 
 
-    const Card = [
-        {
-            id: 1,
-            cardImg: "/img/homeImg/ExpertiseIcon.png",
-            cardTitle: "Expertise",
-            contentCard: "Our team consists of highly skilled professionals who have a deep understanding of the digital landscape. We stay updated with the latest industry trends and best practices to deliver cutting-edge solutions.",
-        },
+    // const CardInit = [
+    //     {
+    //         id: 1,
+    //         cardImg: "/img/homeImg/ExpertiseIcon.png",
+    //         cardTitle: "Expertise",
+    //         contentCard: "Our team consists of highly skilled professionals who have a deep understanding of the digital landscape. We stay updated with the latest industry trends and best practices to deliver cutting-edge solutions.",
+    //     },
 
-        {
-            id: 2,
-            cardImg: "/img/homeImg/ClientCentricIcon.png",
-            cardTitle: "Client-Centric Approach",
-            contentCard: "We prioritize our clients and their unique needs. We listen to your ideas, challenges, and goals, and tailor our services to meet your specific requirements. Your success is our success.",
+    //     {
+    //         id: 2,
+    //         cardImg: "/img/homeImg/ClientCentricIcon.png",
+    //         cardTitle: "Client-Centric Approach",
+    //         contentCard: "We prioritize our clients and their unique needs. We listen to your ideas, challenges, and goals, and tailor our services to meet your specific requirements. Your success is our success.",
 
-        },
+    //     },
 
-        {
-            id: 3,
-            cardImg: "/img/homeImg/Results-DrivenIcon.png",
-            cardTitle: "Results-Driven Solutions",
-            contentCard: "Our primary focus is on delivering results. We combine creativity and technical expertise to create digital products that drive business growth, enhance user experiences, and provide a competitive advantage.",
-        },
-        {
-            id: 4,
-            cardImg: "/img/homeImg/CollaborativeIcon.png",
-            cardTitle: "Collaborative Partnership",
-            contentCard: "We value long-term relationships with our clients. We see ourselves as your digital partner, providing ongoing support, maintenance, and updates to ensure your digital products continue to thrive.",
-        }
-    ]
+    //     {
+    //         id: 3,
+    //         cardImg: "/img/homeImg/Results-DrivenIcon.png",
+    //         cardTitle: "Results-Driven Solutions",
+    //         contentCard: "Our primary focus is on delivering results. We combine creativity and technical expertise to create digital products that drive business growth, enhance user experiences, and provide a competitive advantage.",
+    //     },
+    //     {
+    //         id: 4,
+    //         cardImg: "/img/homeImg/CollaborativeIcon.png",
+    //         cardTitle: "Collaborative Partnership",
+    //         contentCard: "We value long-term relationships with our clients. We see ourselves as your digital partner, providing ongoing support, maintenance, and updates to ensure your digital products continue to thrive.",
+    //     }
+    // ]
 
     return (
 

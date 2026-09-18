@@ -1,36 +1,50 @@
-import React, { useEffect } from 'react'
+import React, { useEffect ,useState} from 'react'
 import './ServicesCards.css'
 import '../../assets/styles/colors.css'
 import '../../assets/styles/fonts.css'
 import { COLORS } from '../../assets/constants/colors'
-// import { getItemFromLocalstorage } from '../../utils/localstorag'
+import { getItemFromLocalstorage , setItemInLocalstorage} from '../../utils/localstorage'
 import { Link } from 'react-router-dom'
 import Button from '../Button/Button'
 import { MdEdit, MdDelete} from "react-icons/md";
 
-// const servicesData = [
-//     {
-//         id: 1,
-//         cardTitle: "Design",
-//         contentCard: "At Squareup, our design team is passionate about creating stunning, user-centric designs that captivate your audience and elevate your brand. We believe that great design is not just about aesthetics; it's about creating seamless and intuitive user experiences.",
-//         cardImg: "/img/homeImg/DesignIcon.png" 
-//     },
-//     {
-//         id: 2,
-//         cardTitle: "Engineering",
-//         contentCard: "Our engineering team combines technical expertise with a passion for innovation to build robust and scalable digital solutions. We leverage the latest technologies and best practices to deliver high-performance applications tailored to your specific needs.",
-//         cardImg: "/img/homeImg/EngineeringIcon.png"
-//     },
-//     {
-//         id: 3,
-//         cardTitle: "Project Management",
-//         contentCard: "Our experienced project management team ensures that your projects are delivered on time, within budget, and according to your specifications. We follow industry-standard methodologies and employ effective communication and collaboration tools to keep you informed throughout the development process.",
-//         cardImg: "/img/homeImg/ProjectManagementIcon.png"
-//     }
-// ]
-
+const servicesDataInit = [
+    {
+        id: 1,
+        cardTitle: "Design",
+        contentCard: "At Squareup, our design team is passionate about creating stunning, user-centric designs that captivate your audience and elevate your brand. We believe that great design is not just about aesthetics; it's about creating seamless and intuitive user experiences.",
+        cardImg: "/img/homeImg/DesignIcon.png" 
+    },
+    {
+        id: 2,
+        cardTitle: "Engineering",
+        contentCard: "Our engineering team combines technical expertise with a passion for innovation to build robust and scalable digital solutions. We leverage the latest technologies and best practices to deliver high-performance applications tailored to your specific needs.",
+        cardImg: "/img/homeImg/EngineeringIcon.png"
+    },
+    {
+        id: 3,
+        cardTitle: "Project Management",
+        contentCard: "Our experienced project management team ensures that your projects are delivered on time, within budget, and according to your specifications. We follow industry-standard methodologies and employ effective communication and collaboration tools to keep you informed throughout the development process.",
+        cardImg: "/img/homeImg/ProjectManagementIcon.png"
+    }
+]
+const SERVICES_KEY = 'rtServicesStorage'
 const ServicesCards = ({servicesData , className , classNameAction , linkEdit , onClickEdit , onClickDelete ,classDelete}) => {
 
+    const [cards , setCards] = useState(()=>{
+            const saved = getItemFromLocalstorage(SERVICES_KEY)
+            if(!saved || saved.length === 0){
+                setItemInLocalstorage(SERVICES_KEY , servicesDataInit)
+                return servicesDataInit
+            }
+            return saved
+        })
+        useEffect(()=>{
+            const saved = getItemFromLocalstorage(SERVICES_KEY)
+            if(saved){
+                setCards(saved)
+            }
+        },[location.key])
 return (
     <section className='bs-services-section'>
         <div className={`bs-services-grid ${className}`}>
