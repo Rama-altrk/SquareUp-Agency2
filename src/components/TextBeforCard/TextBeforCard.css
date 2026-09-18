@@ -1,0 +1,72 @@
+.rtTextCard{
+    padding: 120px 50px 50px 50px;
+    border: 1px solid var(--grey15);
+    font-family: var(--font-primary);
+    h2{
+        font-weight: var(--fw-semibold);
+        font-size: 48px;
+        color: var(--absolutefff);
+        line-height: 100%;
+        letter-spacing: 0%;
+    }
+    p{
+        margin-top: 14px;
+        font-weight: var(--fw-reguler);
+        font-size: 18px;
+        line-height: 150%;
+        letter-spacing: -0.6%;
+        color: var(--grey90);
+    }
+    span{
+        padding: 12px 14px;
+        margin-top: 50px !important;
+        background-color: var(--grey15);
+        font-size: 22px;
+        font-weight: var(--fw-reguler);
+        line-height: 100%;
+        color: var(--absolutefff);
+        letter-spacing: 0%;
+        border-radius: 8px;
+        display: block;
+        width: fit-content;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .rtTextCard{
+        padding: 80px 40px 40px 40px;
+        h2{
+            font-size: 38px;
+        }
+        p{
+            font-family: 16px;
+            margin-top: 10px;
+        }
+        span{
+            margin-top: 40px;
+            font-size: 18px;
+            border-radius: 6px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    .rtTextCard{
+        padding: 40px 16px;
+        h2{
+            font-size: 28px;
+        }
+        p{
+            font-family: 14px;
+            margin-top: 6px;
+        }
+        span{
+            margin-top: 30px;
+            font-size: 16px;
+            line-height: 100%;
+            letter-spacing: 0%;
+            white-space: nowrap;
+        }
+    }
+}

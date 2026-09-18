@@ -1,0 +1,12 @@
+.mrContainer{
+    width: 100%;
+    max-width: 1596px;
+    display: grid;
+    grid-template-columns: repeat(2,max-content);
+}
+
+@media (max-width: 992px) {
+    .mrContainer{
+        grid-template-columns: 1fr;
+    }
+}

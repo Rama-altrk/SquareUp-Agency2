@@ -1,0 +1,31 @@
+/* .rt{
+    padding-left: 30%;
+    padding-top: 50px;
+    padding-right: 5%;
+}
+
+@media screen and (max-width: 992px) {
+    .rt{
+        padding: 0;
+        padding: 110px 4vw;}
+} */
+.rt{
+    /* margin: auto 0; */
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center !important;
+    align-items: center;
+    .rtTop , .rtBottom{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        align-items: center;
+        justify-content: center;
+    }
+    .rtSectionCrud{
+        width: 350px !important;
+        /* height: 20% !important; */
+        border-radius: 16px !important;
+    }
+}

@@ -1,0 +1,52 @@
+.rtProcessHeading{
+    p{
+        /* font-family: var(--font-secondary) !important; */
+        font-size: 20px !important;
+        line-height: 100% !important;
+        letter-spacing: 0% !important;
+    }
+}
+
+.rtCtaContact{
+    margin-bottom: 80px !important;
+}
+
+@media screen and (max-width: 1440px) {
+    .rtProcessHeading{
+        p{
+            /* font-family: var(--font-primary) !important; */
+            font-size: 18px !important;
+            line-height: 24px !important;
+            letter-spacing: -0.6% !important;
+        }
+    }
+
+    .rtCtaContact{
+        margin-bottom: 60px !important;
+    }
+
+}
+
+@media screen and (max-width: 992px) {
+    .rtProcessHeading{
+        &.section-heading{
+            height: 222px !important;
+        }
+        .section-heading__content{
+            .section-heading__title{
+                width: 83.6% !important;
+            }
+            p{
+                /* font-family: var(--font-primary) !important; */
+                font-size: 14px !important;
+                line-height: 24px !important;
+                letter-spacing: -0.6% !important;
+            }
+        }
+        
+    }
+    .rtCtaContact{
+        margin-bottom: 24px !important;
+    }
+
+}

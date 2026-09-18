@@ -1,0 +1,15 @@
+
+@media (max-width:992px) {
+
+    .bh-row1,.bh-row2,.bh-row3{
+        display: flex;
+        flex-direction: column;
+.bh-textarea{
+        width: 100% !important;
+    }
+    }
+    .bh-bn{
+        margin-top: 20px;
+    }
+    
+}

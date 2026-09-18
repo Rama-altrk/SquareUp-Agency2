@@ -1,0 +1,47 @@
+.rtAboutDash{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.rtMainAbout:hover .rtAboutCardDash{
+    filter: blur(5px);
+}
+
+.rtDashActionAbout{
+    transition: ease-in 0.7s ;
+}
+.rtMainAbout:hover .rtDashActionAbout{
+    opacity: 1;
+    visibility: visible;
+    
+}
+.rtAboutCardDash{
+    border-radius: 14px;
+}
+
+@media screen and (max-width: 1440px) {
+    .rtAboutCardDash{
+        padding: 17.5% 11%;
+        div{
+            gap: 3%;
+            h3{
+                padding-left: 2% !important;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    .rtAboutDash{
+        
+        grid-template-columns: repeat(1,1fr);
+    }
+    .rtAboutCardDash{
+        padding: 40px 24px;
+    }
+    
+}

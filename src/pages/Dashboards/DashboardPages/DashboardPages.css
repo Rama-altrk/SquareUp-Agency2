@@ -1,0 +1,15 @@
+.rtDashContent{
+    /* margin-left: 25%; */
+    padding-top: 5%;
+    padding-left: 30%;
+    padding-right: 5%;
+    /* padding: 5%; */
+}
+
+@media screen and (max-width: 992px) {
+    .rtDashContent{
+        margin-left: 0;
+        padding: 0;
+        padding: 120px 4vw;
+    }
+}

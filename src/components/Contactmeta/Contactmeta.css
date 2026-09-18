@@ -1,0 +1,194 @@
+.bh-Contactmeta{
+    margin-bottom: 80px;
+    height: 154px;
+    color: var(--grey90);
+     border: 1px solid var(--grey15);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+    .bh-Contactmeta1{
+         border-right: 1px solid var(--grey15);
+        height: 154px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 14px;
+        width: 50%;
+        .box1{
+            /* width:350px ; */
+            height: 100%;
+            margin-right: 80px;
+            display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+            .bh-spn1{
+            font-size: 22px;
+        }
+        .bh-spn2{
+            width: 196px;
+                font-size: 20px;
+                height: 54px;
+                background-color: var(--grey15);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 6px;
+                padding: 10px 20px;
+            }
+        }
+    }
+    .bh-Contactmeta2{
+        width: 50%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        .bh-box{
+            height: 92px;
+            max-width: 402px;
+            border: 1px solid var(--grey15);
+            display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 12px;
+        gap: 20px;
+        font-size: 18px;
+        margin-left: 104px;
+        padding-left: 24px;
+        padding-right: 14px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        .bh-icon{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+ .big{
+            height: 64px;
+            width: 64px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid transparent;
+            background:
+            linear-gradient(180deg, #242424 0%, rgba(36, 36, 36, 0) 100%) padding-box,
+            linear-gradient(180deg, #2E2E2E 0%, rgba(46, 46, 46, 0) 100%) border-box;
+            font-size: 24px;
+            color: var(--green50);
+     .bh-iface{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background-color: var(--green50);
+            font-size: 24px;
+        }
+        .bh-linkedin{
+                height: 24px;
+            width: 24px;
+            border-radius: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--green50);
+            }
+        }
+ }
+        }
+    }
+}
+@media (max-width:1440px){
+.bh-Contactmeta{
+    margin-bottom: 60px;
+    height: 144px;
+    .bh-Contactmeta1{
+    height: 144px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        /* gap: 10px; */
+.box1{
+/* margin-right: 80px; */
+max-width: 350px;
+                .bh-spn1{
+                font-size: 16px;
+        }
+        .bh-spn2{
+font-size: 16px;
+height: 44px;
+width: 158px;
+         }
+}
+    }
+    .bh-Contactmeta2{
+        height: 156px;
+        .bh-box{
+            height: 72px;
+        border: 1px solid var(--grey15);
+        font-size: 16px;
+    .bh-icon{
+ gap: 10px;
+            .bh-i{
+            font-size: 20px;
+            color: var(--green50);
+        }
+    }
+        }
+    }
+ }
+}
+@media (max-width:992px) {
+    .bh-Contactmeta{
+    margin-bottom: 0px;
+    height: 237px;
+    display: flex;
+    flex-direction:  column;
+    .bh-Contactmeta1{
+      
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+   
+    border-bottom: 1px solid var(--grey15);
+
+        .box1{
+ margin: 0px auto;
+            .bh-spn1{
+                font-size: 16px;
+        }
+        .bh-spn2{
+            font-size: 16px;
+            height: 44px;
+        }
+        }
+    }
+
+    .bh-Contactmeta2{
+        .bh-box{
+            width: 100%;
+            height: 72px;
+        /* border-radius: 8px; */
+        border: none;
+        font-size: 16px;
+        margin:0px auto;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center;
+        align-items: center; */
+        .bh-i{
+            height: 52px;
+            width: 52px;
+            border-radius: 6px;
+            gap: 10px;
+            font-size: 20px;
+        }
+        }
+}
+
+    }
+}

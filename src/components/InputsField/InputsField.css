@@ -1,0 +1,57 @@
+.rtContainerInput{
+    padding: 24px 40px;
+    border-radius: 8px;
+    border: 1px solid var(--grey15);
+    background-color: var(--grey12);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .rtLabelForm{
+        
+        font-size: 22px;
+        line-height: 150%;
+        letter-spacing: 0%;
+    }
+    .rtInputForm{
+        background-color: #ffffff00;
+        font-size: 18px;
+        line-height: 150%;
+        border: none;
+        border-bottom: 1px solid var(--grey20);
+        padding-bottom: 6px;
+    }
+    .rtInputForm::placeholder{
+        color: var(--grey40);
+    }
+}
+
+
+@media screen and (max-width: 1440px) {
+    .rtContainerInput{
+        padding: 20px 30px;
+        border-radius: 6px;
+        gap: 16px;
+        .rtLabelForm{
+            font-size: 18px;
+        }
+        .rtInputForm{
+            font-size: 16px;
+        }
+
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .rtContainerInput{
+        width: 100% !important;
+        padding: 18px 24px;
+        border-radius: 6px;
+        gap: 14px;
+        .rtLabelForm{
+            font-size: 16px;
+        }
+        .rtInputForm{
+            font-size: 16px;
+        }
+    }
+}

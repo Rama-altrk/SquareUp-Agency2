@@ -1,0 +1,41 @@
+.rtLabelCheckbox{
+    min-width: 668px;
+    min-width: 49%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    user-select: none;
+    input{
+        position: absolute;
+        z-index: 4;
+        opacity: 0;
+        cursor: pointer;
+    }
+    .rtMyCheckbox{
+        width: 28px;
+        height: 28px;
+        padding: 4px;
+        margin-right: 10px;
+        border-radius: 4px !important;
+        border: 1px solid var(--grey20);
+        background-color: var(--grey15);
+        position: relative;
+        .rtCheckIcon{
+            color: var(--green50);            
+        }
+    }
+    span{
+        font-size: 18px;
+        line-height: 150%;
+        letter-spacing: 0%;
+        color: var(--green99);
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .rtLabelCheckbox{
+        span{
+            font-size: 16px;
+        }
+    }
+}

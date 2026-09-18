@@ -1,0 +1,108 @@
+
+.rtAboutHeading{
+    p{
+        font-family: var(--font-secondary) !important;
+        width: 996px !important;
+        line-height: 150% !important;
+        letter-spacing: 0% !important;
+    }
+}
+.ourStory {
+    grid-column: 1/-1;
+    border-left: 1px solid var(--grey15);
+    border-right: 1px solid var(--grey15);
+    border-top: 1px solid var(--grey15);
+    padding-left: 50px;
+    display: flex;
+    align-items: center;
+
+    h1 {
+        font-size: clamp(38px, 2.8vw + 27px, 58px);
+        font-family: var(--font-primary);
+        font-weight: var(--fw-semibold);
+        color: var(--absolutefff);
+        margin: 100px 0 100px 0;
+    }
+}
+
+.rtAboutSection{
+    h2{
+        padding: 100px 50px;
+        border: 1px solid var(--grey15);
+        border-bottom: none;
+        color: var(--absolutefff);
+        font-family: var(--font-primary);
+        font-weight: var(--fw-semibold);
+        font-size: 58px;
+        line-height: 100%;
+        letter-spacing: 0%;
+    }
+    .rtAboutGrid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        .rtAboutCard{
+            div{
+                h3{
+                    color: var(--green80) !important;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1440px) {
+    .rtAboutHeading{
+        p{
+            font-size: 18px !important;
+            font-family: var(--font-primary) !important;
+            font-weight: var(--fw-regular) !important;
+            width: 780px !important;
+            line-height: 24px !important;
+            letter-spacing: -0.6% !important;
+        }
+    }
+
+    .rtAboutSection{
+        h2{
+            padding: 80px 50px;
+            font-size: 48px;
+        }
+    }
+    .ourStory {
+
+        h1 {
+            margin: 81px 0 80px 0;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .ourStory {
+        padding-left: 24px;
+
+        h1 {
+            margin: 40px 0 40px 0;
+      }
+  }
+  .rtAboutHeading{
+        height: 25.11vh;
+        p{
+            font-family: var(--font-primary) !important;
+            font-weight: var(--fw-regular) !important;
+            font-size: 14px !important;
+            width: 326px !important;
+            width: 83.6vw !important;
+            line-height: 24px !important;
+            letter-spacing: -0.6% !important;
+        }
+    }
+    .rtAboutSection{
+        h2{
+            padding: 40px 24px;
+            font-size: 38px;
+        }
+        .rtAboutGrid{
+            grid-template-columns: 1fr;
+        }
+    }
+}

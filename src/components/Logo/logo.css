@@ -1,0 +1,59 @@
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10.28px;
+}
+.logo-box{
+    width: 60.28px;
+    height: 60px;
+    background-color: var(--green50);
+    border-radius: 9.38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-box img{
+    width: 38.31px;
+    height: 43.1px;
+}
+.logo-text-img{
+  height: 19.05px;
+  width: auto;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 1440px){
+  .logo-box{
+    width: 40.19px;
+    height: 40px;
+    img{
+      width: 25.54px;
+      height: 28.73px;
+    }
+  }
+
+  .logo-text-img{
+    height: 12.7px;
+  }
+
+}
+
+
+@media (max-width: 992px){
+  .logo-container {
+  gap: 6.86px;
+  }
+  .logo-box{
+      width: 40.19PX;
+      height: 40PX;
+      border-radius: 5PX;
+  }
+  .logo-box img{
+      width: 25.54px;
+      height: 28.73px;
+  }
+  .logo-text-img{
+    height: 12.7px;
+  }
+}
+

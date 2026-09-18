@@ -1,0 +1,169 @@
+.card {
+    border: 1px solid var(--grey15);
+    width: 100% !important;
+
+    p {
+        margin: 0 50px 100px 50px;
+        font-family: var(--font-secondary);
+        font-weight: var(--fw-regular);
+        color: var(--grey60);
+        font-size: 18px;
+        line-height: 150%;
+        letter-spacing: 1%;
+    }
+}
+
+.aboutCard { 
+    p {
+        max-width: 697.5px !important ;
+    }
+}
+
+.process-Card {
+    max-width: 798px;
+    height: 490px !important;
+    border: 1px solid var(--grey15);
+
+    P{
+        width: 698px;
+    }
+}
+
+
+.mr-titleCard {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 100px 50px 50px 50px;
+
+    h1 {
+        font-family: var(--font-primary);
+        font-weight: var(--fw-semibold);
+        color: var(--green80);
+        font-size: 120px;
+        line-height: 100%;
+    }
+
+    span {
+        font-family: var(--font-primary);
+        font-weight: var(--fw-medium);
+        color: var(--grey60);
+        font-size: 24px;
+        line-height: 100%;
+        border-bottom: 1px solid var(--grey15);
+        width: 100%;
+        max-width: 437px;
+        padding: 43px 0 20px 0;
+    }
+}
+
+@media screen and (max-width:1440px) {
+    .card {
+        max-width: 640px !important;
+        height: 452px;
+
+        p {
+            font-size: 16px;
+            margin: 0 40px 80px 40px;
+            max-width: 38.888vw !important;
+            letter-spacing: 0% !important;
+        }
+    }
+
+    .process-Card {
+        height: 404px !important;
+        max-width: 640px;
+    }
+
+    .aboutCard {
+        max-width: 640px !important;
+    }
+
+    .mr-titleCard {
+        padding: 5.555% 40px 40px 40px;
+
+        h1 {
+            font-size: 120px;
+        }
+
+        span {
+            font-size: 24px;
+            padding-top: 35px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+
+    .card {
+        height: auto !important;
+
+        p {
+            font-size: 14px;
+            margin: 0 24px 40px 28px;
+            max-width: 79.487vw;
+        }
+    }
+
+    .mr-titleCard {
+        padding: 40px 24px 30px 24px;
+
+        h1 {
+            font-size: 80px;
+        }
+
+        span {
+            font-size: 20px;
+            padding-top: 18px;
+        }
+    }
+}
+
+/* .card {
+
+    padding-top: 100px;
+    padding-right: 50px;
+    padding-bottom: 100px;
+    padding-left: 50px;
+    gap: 50px;
+    border: 1px solid var(--grey15);
+
+    p {
+        font-family: var(--font-secondary);
+        font-weight: var(--fw-regular);
+        color: var(--grey60);
+        margin: 50px 0 0 0;
+        font-size: 18px;
+        line-height: 150%;
+        max-width: 698px;
+    }
+}
+
+.mr-titleCard {
+    width: 560px;
+    height: 84px;
+    gap: 24px;
+    display: flex;
+    align-items: center;
+
+
+    h1 {
+        font-family: var(--font-primary);
+        font-weight: var(--fw-semibold);
+        color: var(--green80);
+        font-size: 150px;
+        line-height: 100%;
+        letter-spacing: 0%;
+    }
+
+    span {
+        font-family: var(--font-primary);
+        font-weight: var(--fw-medium);
+        color: var(--grey60);
+        font-size: 30px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        border-bottom: 1px solid var(--grey15);
+        padding: 43px 0 26px 0;
+    }
+} */

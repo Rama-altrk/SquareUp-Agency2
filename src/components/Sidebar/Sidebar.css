@@ -1,0 +1,171 @@
+.rtSidebar{
+    width: 25%;
+    height: 100vh;
+    background-color: var(--grey20);
+    border-right: 1px solid var(--grey15);
+    position: fixed;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    font-family: var(--font-primary);
+    .rtDashWrapper{
+        height: 50%;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        .rtHeaderDash{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            .rtBackHome{
+                margin-top: 10px;
+                width: 34px;
+                height: 34px;
+                color: var(--green50);
+                transition: ease-in 0.3s;
+                &:hover{
+                    transform: scale(1.2);
+                    opacity: 0.8;
+                }
+            }
+            h1{
+                font-weight: var(--fw-semibold);
+                font-size: 38px;
+                color: var(--absolutefff);
+            }
+        }
+        .rtSubMenu{
+            padding-left: 50px;
+            list-style: none;
+            :first-child{
+                margin-top: 15px;
+            }
+        }
+    }
+    .rtSidebarMenu ul{
+
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        li{
+            list-style: none;
+            a{
+                text-decoration: none;
+                font-weight: var(--fw-regular);
+                font-size: 22px;
+                color: var(--grey90);
+                border-radius: 8px;
+                transition: ease-in 0.3s;
+                
+                &.active{
+                    padding: 12px;
+                    color: var(--green50);
+                    background-color: var(--grey30);
+                    border-color: var(--grey20);
+                    transform: scale(1.5);
+                }
+                &:hover{
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+    
+    .rtDashMobileContainer{
+        display: none;
+        padding: 6px;
+        background-color: var(--grey15);
+        border-radius: 6px;
+        .rtMenuIconDash {
+            display: none;
+            width: 34px;
+            height: 34px;
+            background-color: var(--grey15);
+            border: 1px solid var(--grey15);
+            color: var(--absolutefff);
+            font-size: 25.5px;
+            color: var(--green80);
+            cursor: pointer;        
+        }
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .rtSidebar{
+        .rtDashWrapper{
+            .rtHeaderDash{
+                gap: 8px;
+                .rtBackHome{
+                    width: 26px;
+                    height: 26px;
+                }
+                h1{
+                    font-size: 28px;
+                }
+            }
+        }
+        .rtSidebarMenu ul{
+            gap: 24px;
+            li a{
+                font-size: 18px;
+                border-radius: 6px;
+            }
+            &.active{
+                padding: 10px;
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .rtSidebar{
+        padding: 0 4vw;
+        padding-top: 40px;
+        padding-bottom: 20px;
+        width: 100%;
+        height: fit-content;
+        flex-direction: row;
+        .rtDashWrapper{
+            .rtHeaderDash{
+                gap: 4px;
+                .rtBackHome{
+                    width: 20px;
+                    height: 20px;
+                    margin-top: 8px;
+                }
+                h1{
+                    font-size: 22px;
+                }
+            }
+        }
+        .rtSidebarMenu{
+            background-color: var(--grey20);
+            position: fixed;
+            text-align: center;
+            top: 80px;
+            right: 70px;
+            left: -100%;
+            padding: 30px;
+            width: 80%;
+            transition: left  0.6s ease-in-out;
+        }
+        .rtSidebarMenu.open{
+            left: 0;
+        }
+        .rtDashLogo{
+            display: none;
+        }
+        .rtDashMobileContainer{
+            display: block;
+            .rtMenuIconDash{
+                display: block;
+            }
+        }
+    }
+}

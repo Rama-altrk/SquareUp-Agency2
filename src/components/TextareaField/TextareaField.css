@@ -1,0 +1,71 @@
+.rtThirdRow{
+        padding: 24px 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        border: 1px solid var(--grey15);
+        border-radius: 6px;
+        background-color: var(--grey12);
+        label{
+            font-size: 22px;
+            line-height: 150%;
+        }
+        div{
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            textarea{
+                padding-bottom: 6px;
+                background-color: #ffffff00;
+                font-size: 18px;
+                line-height: 150%;
+                border: none;
+                border-bottom: 1px solid var(--grey20);
+                line-height: 33px;
+                background-image: linear-gradient(transparent 31px , var(--grey20) 31px);
+                background-size: 100% 33px;
+                background-attachment: local; 
+                height: 66px;
+                
+                &::placeholder{
+                    color: var(--grey40);
+                }
+                
+            }
+            div{
+                border: 1px solid var(--grey20);
+            }
+        }
+    }
+
+
+@media screen and (max-width: 1440px) {
+    .rtThirdRow{
+        padding: 20px 30px;
+        label{
+            font-size: 16px;
+        }
+        div{
+            gap: 34px;
+            textarea{
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .rtThirdRow{
+        padding: 18px 24px;
+        gap: 14px;
+        label{
+            font-size: 16px;
+        }
+        div{
+            gap: 34px;
+            textarea{
+                font-size: 16px;
+            }
+        }
+    }
+}

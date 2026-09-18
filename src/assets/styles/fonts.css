@@ -1,0 +1,12 @@
+:root{
+    --font-primary: "Barlow", sans-serif;
+    --font-secondary: "Inter", sans-serif;
+
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+    --fw-extrabold: 800;
+
+    --fw-secondary-fixed: 400;
+}

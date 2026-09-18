@@ -1,0 +1,32 @@
+.rtWorkHeading{
+    p{
+        font-size: 20px !important;
+    }
+}
+
+.rtWorkSquareUp{
+
+}
+
+@media screen and (max-width: 1440px) {
+    .rtWorkHeading{
+        p{
+            font-size: 18px !important;
+        }
+    }
+}
+@media screen and (max-width: 992px) {
+    .rtWorkHeading{
+        p{
+            font-size: 14px !important;
+        }
+    }
+    .rtWorkSquareUp{
+        height: 463px !important;
+        /* height: 55vh !important; */
+        p{
+            line-height: 24px !important;
+            letter-spacing: -0.6%;
+        }
+    }
+}

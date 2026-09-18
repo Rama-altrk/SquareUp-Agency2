@@ -1,0 +1,32 @@
+.rtCardDash{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr) !important;
+    /* border-radius: 12px !important; */
+    .bs-service-card{
+        border-radius: 14px;
+    }
+    .bs-service-card:hover .rtServicesCard{
+        filter: blur(5px);
+    }
+}
+.rtActionServices{
+    transition: ease-in 0.7s ;
+    .rtEdit:hover , .rtDelete:hover{
+        transition: ease-in 0.3s ;
+        transform: scale(1.1);
+    }
+}
+
+.bs-service-card:hover .rtActionServices{
+    opacity: 1;
+    visibility: visible;
+    
+}
+@media screen and (max-width: 1440px) {
+    
+    .rtCardDash{
+        grid-template-columns: 1fr !important;
+    }
+}

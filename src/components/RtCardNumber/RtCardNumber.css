@@ -1,0 +1,126 @@
+.rtCardAndAction{
+    position: relative;
+}
+.rtCard{
+    height: 100%;
+    padding: 100px 50px;
+    border: 1px solid var(--grey15);
+    div{
+        font-family: var(--font-primary);
+        display: flex;
+        align-items: end;
+        gap: 14px;
+        span{
+            font-weight: var(--fw-semibold);
+            color: var(--green80);
+            font-size: 150px;
+            line-height: 100%;
+            letter-spacing: 0%;
+        }
+        h3{
+            width: 100%;
+            height: auto;
+            padding-bottom: 26px;
+            padding-left: 10px;
+            margin-bottom: 14px;
+            font-weight: var(--fw-medium);
+            font-size: 30px;
+            line-height: 100%;
+            letter-spacing: 0%;
+            color: var(--grey60);
+            border-bottom: 1px solid var(--grey15);
+        }
+    }
+    p{
+        margin-top: 50px;
+        font-family: var(--font-secondary);
+        color: var(--grey60);
+        font-family: Inter;
+        font-size: 18px;
+        line-height: 150%;
+        letter-spacing: 0%;
+    }
+}
+
+.rtProcessCard{
+    div{
+        height: 105px;
+    }
+    
+}
+
+.rtStorageAction{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    z-index: 3px;
+    display: flex;
+    gap: 10px;
+    opacity: 0; 
+    visibility: hidden;
+}
+
+@media screen and (max-width: 1440px) {
+    .rtCard{
+        padding: 80px 40px;
+        div{
+            span{
+                font-size: 120px;
+            }
+            h3{
+                padding-bottom: 20px;
+                font-size: 24px;
+                margin-bottom: 12px;
+            }
+        }
+        p{
+            margin-top: 40px;
+            font-size: 16px;
+        }
+    }
+
+    .rtProcessCard{
+        div{
+            height: 84px;
+            
+        }
+        
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    .rtCard{
+        padding: 40px 24px;
+        div{
+            gap: 10px;
+            span{
+                font-size: 80px;
+            }
+            h3{
+                padding-bottom: 14px;
+                font-size: 20px;
+                margin-bottom: 8px;
+            }
+        }
+        p{
+            margin-top: 30px;
+            font-size: 14px;
+        }
+    }
+
+    .rtProcessCard{
+        div{
+            height: 56px;
+            h3{
+                padding-bottom: 20px;
+            }
+            
+        }
+        
+    }
+}
+
+
+

@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--grey10);
+    color: #fff;
+}
+
+.mr-atSquareUp {
+    grid-column: 1/-1;
+    width: 100%;
+    border-left: 1px solid var(--grey15);
+    border-right: 1px solid var(--grey15);
+    border-bottom: 1px solid var(--grey15);
+    border-top: 1px solid var(--grey15);
+    padding: 100px 0 50px 0;
+}
+
+.mr-subContainer-process {
+
+    padding-left: 50px;
+
+    h1 {
+        font-family: var(--font-primary);
+        font-weight: var(--fw-semibold);
+        color: var(--absolutefff);
+        font-size: 48px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        margin-bottom: 14px;
+    }
+
+    p {
+        font-family: var(--font-primary);
+        font-weight: var(--fw-regular);
+        color: var(--grey90);
+        font-size: 18px;
+        line-height: 150%;
+        letter-spacing: -0.6%;
+        width: 100%;
+        max-width: 1196px;
+        margin-bottom: 50px;
+    }
+}
+
+.mr-text-box {
+    width: 100%;
+    max-width: 420px;
+    height: 50px;
+    background-color: var(--grey15);
+    border-radius: 8px;
+    position: relative;
+
+    p {
+        position: absolute;
+        top: 12px;
+        right: 14px;
+        left: 14px;
+        bottom: 12px;
+        font-family: var(--font-primary);
+        font-weight: var(--fw-regular);
+        color: var(--absolutefff);
+        font-size: 22px;
+        line-height: 100%;
+    }
+}
+
+@media (min-width: 992px) and (max-width:1440px) {
+
+    .mr-subContainer-process {
+
+        padding-left: 40px;
+
+        h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            max-width: 960px;
+            margin-bottom: 40px;
+        }
+    }
+
+    .mr-text-box {
+        max-width: 341px;
+        height: 42px;
+
+        p {
+            font-size: 18px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+
+    .mr-atSquareUp{
+        padding-top: 41px;
+    }
+
+    .mr-subContainer-process {
+        padding-left: 16px;
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 6px;
+        }
+
+        p {
+            font-size: 14px;
+            width: 83.589vw;
+            margin-bottom: 30px;
+        }
+    }
+
+    .mr-text-box {
+        max-width: 305px;
+        height: 39px;
+
+        p {
+            font-size: 16px;
+            top: 10px;
+            right: 10px;
+            left: 10px;
+            bottom: 10px;
+        }
+    }
+}

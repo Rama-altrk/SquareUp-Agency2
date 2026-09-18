@@ -1,0 +1,194 @@
+.bs-squareup::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-image: url('/img/squares.png');
+    opacity: 60%;
+    background-repeat: repeat;
+}
+
+
+.bs-squareup {
+    display: grid;
+    border-bottom: 1px solid var(--grey15);
+    background-color: black;
+    position: relative;
+    padding: 120px 0px;
+    margin-bottom: 80px;
+    text-align: center;
+    width: 100%;
+    height: 597px;
+    /* height: 55.3vh; */
+    overflow: hidden;
+
+    .rtBackStart , .rtBackColorStart , .rtContentStart{
+        grid-area: 1/1;
+        width: 100%;
+        height: 100%;
+    }
+
+    .rtBackStart{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        object-fit: cover;
+        background-color: #ACFF2433;
+        filter: grayscale(100%) brightness(16%);
+        z-index: 0;
+    }
+    .rtBackColorStart{
+        position: absolute;
+        background-color: #ACFF2433;
+        mix-blend-mode: overlay;
+        z-index: 2;
+    }
+    .rtContentStart{
+        position: absolute;
+        z-index: 4;
+        /* display: flex; */
+        /* flex-direction: column; */
+        /* justify-content: center; */
+        /* left: 50px; */
+        /* transform: translateX(-50%); */
+        /* padding: 120px 300px; */
+    }
+    .bs-square {
+        /* position: relative; */
+        z-index: 5;
+        filter: none;
+        width: 80.38px;
+        height: 80px;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        background-color: var(--green50);
+        box-shadow: inset 0 0 14px 6px rgba(255, 255, 255, 0.5);
+        img{
+            width: 42px;
+            height: 48px;
+            opacity: 1;
+            /* top: 16px; */
+            /* left: 18.85px; */
+        }
+    }
+
+    h2 {
+        position: relative;
+        z-index: 2;
+        filter: none;
+        margin-top: 50px;
+        font-family: var(--font-primary);
+        font-weight: var(--fw-semibold);
+        font-size: 38px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        color: var(--absolutefff);
+    }
+
+    p {
+        position: relative;
+        z-index: 2;
+        filter: none;
+        width: 896px;
+        margin-top: 14px !important;
+        margin: auto;
+        font-family: var(--font-primary);
+        font-weight: var(--fw-regular);
+        font-size: 18px;
+        line-height: 150%;
+        letter-spacing: -0.6% ;
+        color: var(--grey90);
+    }
+    .rtButtonStartProject{
+        position: relative;
+        z-index: 2;
+        margin-top: 50px;
+        /* margin: 50px auto 120px; */
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .bs-squareup{
+        height: 483px;
+        /* max-height: 53.66vh; */
+        padding: 100px 0;
+        margin-bottom: 60px;
+        .rtContentStart{
+            .bs-square{
+                width: 60.28px;
+                height: 60px;
+                border-radius: 10px;
+                img{
+                    width: 32px;
+                    height: 36px;
+                }
+            }
+            h2{
+                margin-top: 40px;
+                font-size: 30px;
+            }
+            p{
+                width: 780px;
+                margin-top: 10px;
+                font-size: 16px;
+            }
+            .rtButtonStartProject{
+                margin-top: 40px;
+                width: 127px !important;
+                height: 49px !important;
+                border-radius: 6px !important;
+                font-size: 14px !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .rtContentStart{
+        padding: 50px 16px;
+        padding: 6vh 4vw;
+        /* text-align: center; */
+        /* margin: auto; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* justify-content: center; */
+    }
+    .bs-squareup {
+        height: 391px;
+        /* height: 100vw; */
+        padding: 0;
+        
+        margin-bottom: 24px;
+    }
+    .bs-square {
+        width: 50.23px !important;
+        height: 50px !important;
+        border-radius: 7px !important;
+        img{
+            width: 26.67px !important;
+            height: 30px !important;
+        }
+    }
+    .rtH2 {
+        margin-top: 28px !important;
+        font-size: 24px !important;
+        max-width: 100%;
+    }
+    .rtP {
+        margin-top: 6px !important;
+        max-width: 100%;
+        font-size: 14px !important;
+
+    }
+    .rtButtonStartProject{
+        margin-top: 28px !important;
+        width: 127px !important;
+        height: 49px !important;
+        border-radius: 6px !important;
+        font-size: 14px !important;
+    }
+}

@@ -1,0 +1,120 @@
+.faq-crud-wrapper {
+  width: 100%;
+  padding: 24px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-sizing: border-box;
+  font-family: var(--font-primary);
+}
+
+.faq-crud-add-link {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+}
+
+.faq-crud-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.faq-crud-card {
+  position: relative;
+  background-color: var(--grey10);
+  border: 1px solid var(--grey15);
+  border-radius: 12px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 80px;
+  box-sizing: border-box;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.faq-crud-card-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.faq-crud-num {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--green50);
+  flex-shrink: 0;
+}
+
+.faq-crud-question {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--absolutefff);
+  word-break: break-word;
+}
+
+.faq-crud-card-actions {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(2px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  z-index: 10;
+}
+
+.faq-crud-card:hover .faq-crud-card-actions {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.faq-crud-btn {
+  width: 46px !important;
+  height: 46px !important;
+  min-width: 46px !important;
+  border-radius: 6px !important;
+  font-size: 30px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  border: none !important;
+  padding: 0 !important;
+  transition: transform 0.15s ease !important;
+}
+
+.faq-crud-btn svg {
+  fill: #000000 !important;
+  color: #000000 !important;
+}
+
+.faq-crud-btn:hover {
+  transform: scale(1.08);
+}
+
+.faq-crud-btn.edit-btn {
+  background-color: var(--green50, #9eff00) !important;
+}
+
+.faq-crud-btn.delete-btn {
+  background-color: red !important;
+}
+
+.faq-crud-empty {
+  color: var(--grey60);
+  font-size: 16px;
+  text-align: center;
+  margin: 30px 0;
+}
