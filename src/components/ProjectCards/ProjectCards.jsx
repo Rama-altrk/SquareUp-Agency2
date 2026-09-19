@@ -202,13 +202,15 @@ function ProjectCards({ isDashboard = false, onEdit, onDelete, projects }) {
         ))}
       </div>
 
-      {items.length > 4 && (
+      {
+      items.length > 4 && (
         <div className="bs-more-container">
           <button onClick={bsShow} className="bs-load-more-btn">
             {visibleCount < items.length ? "Show More" : "Show Less"}
           </button>
         </div>
-      )}
+      )
+      }
     </div>
   );
 }
