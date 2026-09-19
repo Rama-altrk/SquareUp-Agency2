@@ -42,7 +42,7 @@ export default function ReviewSectionCrud() {
             onDelete={handleDeleteReview}
             onEdit={handleNavigateToEdit}
           />
-         
+        
         </div>
       </div>
     </>

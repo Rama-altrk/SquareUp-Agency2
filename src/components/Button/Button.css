@@ -9,4 +9,8 @@ button {
     font-family: var(--font-primary);
     font-weight: var(--fw-medium);
     cursor: pointer;
+    &:hover{
+        transition: ease-in-out 0.6s;
+        /* transform: scale(1.1); */
+    }
 }
