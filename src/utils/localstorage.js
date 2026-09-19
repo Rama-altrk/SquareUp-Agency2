@@ -67,17 +67,28 @@ export const removeFromLocalstorage =(key , deletedId) =>{
 //     }
 // } 
 
-export const updateLocalstorage = (key , itemId , updatedField) =>{
-    const currentData = getStorageData(key)
+// export const updateLocalstorage = (key , itemId , updatedField) =>{
+//     const currentData = getStorageData(key)
+
+//     const updatedData = currentData.map(item => {
+//         if (parseInt(item.id) === parseInt(itemId)) 
+//             return { ...item, ...updatedData }
+
+//         return item
+//         console.log("update Dooooone")
+//     })
+//     setItemInLocalstorage(key , updatedData)
+//     return updatedData
+// }
+export const updateLocalstorage = (key, itemId, updatedFields) => {
+    const currentData = getItemFromLocalstorage(key)
 
     const updatedData = currentData.map(item => {
-        if (parseInt(item.id) === parseInt(itemId)) 
-            return { ...item, ...updatedData }
-
+        if (item.id === parseInt(itemId)) 
+            return { ...item, ...updatedFields }
         return item
-        console.log("update Dooooone")
     })
-    setItemInLocalstorage(key , updatedData)
+    setItemInLocalstorage(key, updatedData)
     return updatedData
 }
 
