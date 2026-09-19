@@ -2,7 +2,7 @@
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import ReviewForm from '../../../../../components/ReviewForm/ReviewForm';
 import './AddAndEditReview.css';
-import { getItemFromLocalstorage, addToLocalstorage, updateLocalstorage } from "../../../../../utils/localstorage";
+import { getItemFromLocalstorage, addToLocalstorage, updateLocalstorage } from "../../../../../utils/localstorage.js";
 
 export default function AddAndEditReview() {
   const location = useLocation();

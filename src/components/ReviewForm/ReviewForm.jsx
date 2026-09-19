@@ -7,7 +7,7 @@ import TextareaField from '../TextareaField/TextareaField'
 import Button from '../Button/Button'
 import { useState } from 'react'
 import { useNavigate, useParams, useLocation } from 'react-router-dom'
-import { getItemFromLocalstorage, addToLocalstorage, updateLocalstorage } from '../../utils/localstorage'
+import { getItemFromLocalstorage, addToLocalstorage, updateLocalstorage } from '../../utils/localstorage.js'
 
 // دالة مساعدة تحوّل الملف لـ base64
 const convertToBase64 = (file) => {
@@ -63,10 +63,11 @@ function ReviewForm() {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        // let imageValue = image
-        // if (image && typeof image !== 'string') {
-        //     imageValue = await convertToBase64(image)
-        // }
+        let imageValue = image
+        // إذا المستخدم اختار ملف جديد (File object)، حوّليه base64
+        if (image && typeof image !== 'string') {
+            imageValue = await convertToBase64(image)
+        }
 
         const reviewData = {
             title,
@@ -152,12 +153,6 @@ function ReviewForm() {
                         color=" var(--grey15)"
                         border=""
                         className="bh-bn" />
-                        <button
-                                type="button"
-                                onClick={() => navigate(-1)}
-                                className="work-btn-action work-btn-cancel">
-                                Cancel
-                        </button>
                 </div>
             </form>
         </>

@@ -12,6 +12,7 @@ const defaultProjectsData = [
     image: "/img/card1photo.png",
     title: "Chic Boutique",
     link: "https://www.chicboutique.com",
+    web: "https://www.behance.net/gallery/150182533/Social-Media-Taxi-Jaik-App",
     description: "We developed a visually stunning and user-friendly e-commerce platform for Chic Boutique, a renowned fashion retailer. The platform featured seamless product browsing, secure payment integration, and personalized recommendations, resulting in increased online sales and customer satisfaction.",
   },
   {
@@ -20,6 +21,7 @@ const defaultProjectsData = [
     image: "/img/card2photo.png",
     title: "HungryBites",
     link: "https://www.hungrybites.com",
+    web:"https://www.behance.net/gallery/159187695/Ui-Design-Furniture-Apps",
     description: "HungryBites approached us to create a mobile app that streamlined their food delivery service. The app included features like real-time order tracking, easy menu customization, and secure payment options, resulting in improved customer convenience and operational efficiency.",
   },
   {
@@ -28,6 +30,7 @@ const defaultProjectsData = [
     image: "/img/card3photo.png",
     title: "EventMasters",
     link: "https://www.eventmasters.com",
+    web:"https://www.behance.net/gallery/159021095/Haram-Transfer-Rebranding",
     description: "EventMasters required a comprehensive booking and reservation system for their event management services. We designed a user-friendly platform that allowed seamless event registration, ticketing, and attendee management, resulting in streamlined processes and enhanced customer experiences.",
   },
   {
@@ -36,6 +39,7 @@ const defaultProjectsData = [
     image: "/img/card4photo.png",
     title: "ProTech Solutions",
     link: "https://www.protechsolutions.com",
+    web:"https://www.behance.net/gallery/159409173/Ui-Redesign-Proposal-Way-in-App",
     description: "HungryBites approached us to create a mobile app that streamlined their food delivery service. The app included features like real-time order tracking, easy menu customization, and secure payment options, resulting in improved customer convenience and operational efficiency.",
   },
   {
@@ -44,6 +48,7 @@ const defaultProjectsData = [
     image: "/img/card5photo.png",
     title: "Dream Homes Realty",
     link: "https://www.dreamhomesrealty.com",
+    web:"https://www.behance.net/gallery/159846555/Social-Media-posters-Unofficial-Redesign",
     description: "Dream Homes Realty wanted an intuitive web portal for showcasing their property listings. We created a visually appealing platform with advanced search filters, virtual tours, and a user-friendly interface, enabling potential buyers to find their dream homes easily.",
   },
   {
@@ -52,6 +57,7 @@ const defaultProjectsData = [
     image: "/img/card6photo.png",
     title: "FitLife Tracker",
     link: "https://www.fitlifetracker.com",
+    web:"https://www.behance.net/gallery/160723733/Social-Media-posters-Unofficial-Redesign",
     description: "FitLife Tracker approached us to develop a mobile app that tracked fitness activities and provided personalized workout plans. The app included features such as activity tracking, progress monitoring, and social sharing, empowering users to lead healthier lifestyles.",
   },
   {
@@ -60,6 +66,7 @@ const defaultProjectsData = [
     image: "/img/card7photo.png",
     title: "Global Logistics Solutions",
     link: "https://www.globallogisticssolutions.com",
+    web:"https://www.behance.net/gallery/160338335/End-app-brand-identity",
     description: "Global Logistics Solutions required a custom software solution to streamline their supply chain operations. We developed a scalable system that optimized inventory management, automated order processing, and enhanced logistics tracking, resulting in improved efficiency and reduced costs.",
   },
   {
@@ -68,6 +75,7 @@ const defaultProjectsData = [
     image: "/img/card8photo.png",
     title: "EduConnect",
     link: "https://www.educonnect.com",
+    web:"https://www.behance.net/gallery/160727573/Social-Media-posters-Unofficial-Redesign",
     description: "EduConnect sought an educational platform to facilitate online learning. We developed an interactive platform with virtual classrooms, multimedia content, and student progress tracking, providing a seamless and engaging learning experience for students of all ages.",
   },
   {
@@ -76,6 +84,7 @@ const defaultProjectsData = [
     image: "/img/card9photo.png",
     title: "WanderWise",
     link: "https://www.wanderwise.com",
+    web:"https://www.behance.net/gallery/194901929/Ui-Design-Ard-Al-Teeb-Perfume-Website",
     description: "WanderWise wanted a mobile app that simplified travel planning and discovery. We developed an app with features like personalized itineraries, destination guides, and integrated booking options, making it easier for travelers to explore new destinations.",
   },
   {
@@ -84,6 +93,7 @@ const defaultProjectsData = [
     image: "/img/card10photo.png",
     title: "ConnectCRM",
     link: "https://www.connectcrm.com",
+    web:"https://www.behance.net/gallery/195191953/Ui-design-Louis-Marley-fragrance-Website",
     description: "ConnectCRM needed a web application to manage their customer relationships effectively. We developed a feature-rich CRM platform with lead management, communication tracking, and data analytics, enabling businesses to nurture customer relationships and drive growth.",
   },
 ];
@@ -191,11 +201,10 @@ function ProjectCards({ isDashboard = false, onEdit, onDelete, projects }) {
                     {project.link || project.projectLink}
                   </a>
                 </div>
-                <a href={project.link || project.projectLink} target="_blank" rel="noreferrer" className="bs-card-arrow-btn">
+                <a href={project.web} target="_blank" rel="noreferrer" className="bs-card-arrow-btn">
                   <GoArrowUpRight className="arrow-img" />
                 </a>
               </div>
-
               <p className="bs-card-description">{project.description}</p>
             </div>
           </div>

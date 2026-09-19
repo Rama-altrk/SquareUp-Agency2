@@ -4,7 +4,7 @@ import Button from '../../../../components/Button/Button';
 import './ReviewSectionCrud.css';
 import About from '../../../../components/About/About.jsx';
 import { useEffect, useState } from 'react';
-import { getItemFromLocalstorage, removeFromLocalstorage } from '../../../../utils/localstorage';
+import { getItemFromLocalstorage, removeFromLocalstorage } from '../../../../utils/localstorage.js';
 import { MdDelete, MdEdit } from 'react-icons/md';
 
 export default function ReviewSectionCrud() {
