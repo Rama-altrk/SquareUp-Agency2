@@ -3,9 +3,10 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   .bh-card {
-  border-right: 1px solid var(--grey15);
+  /* border-right: 1px solid var(--grey15);
   border-bottom: 1px solid var(--grey15);
-  border-top: 1px solid var(--grey15);
+  border-top: 1px solid var(--grey15); */
+  border: 1px solid var(--grey15);;
   height: 574px;
   display: flex;
   flex-direction: column;
@@ -26,19 +27,19 @@
     display: flex;
     gap: 8px;
     z-index: 4;
-     opacity: 0;
+     display: none;
 
    }
      &:has(.bh-card-overlay):hover{
       .bh-content{
- filter: blur(5px);
- transition:1s;
+          filter: blur(5px);
+          transition:0.5s;
       }
  
   .bh-card-overlay{
-      opacity: 1;
+      display: flex;
       filter: none;
-       transition:1s;
+       transition:0.5s;
   }
 }
 
@@ -55,7 +56,6 @@
 }
 
 .bh-small-card {
-  /* overflow: hidden; */
   height: 103px;
   padding: 21.5px 20px;
   border-radius: 8px;
@@ -148,9 +148,6 @@
 @media (max-width: 992px) {
   .bh-cards {
     grid-template-columns: 1fr;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     .bh-card{
   height: auto;
   width: 100%;

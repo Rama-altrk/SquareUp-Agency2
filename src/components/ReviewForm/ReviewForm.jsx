@@ -8,17 +8,6 @@ import Button from '../Button/Button'
 import { useState } from 'react'
 import { useNavigate, useParams, useLocation } from 'react-router-dom'
 import { getItemFromLocalstorage, addToLocalstorage, updateLocalstorage } from '../../utils/localstorage.js'
-
-// دالة مساعدة تحوّل الملف لـ base64
-const convertToBase64 = (file) => {
-    return new Promise((resolve, reject) => {
-        const reader = new FileReader()
-        reader.readAsDataURL(file)
-        reader.onload = () => resolve(reader.result)
-        reader.onerror = (error) => reject(error)
-    })
-}
-
 function ReviewForm() {
     const navigate = useNavigate()
     const location = useLocation()
@@ -62,13 +51,6 @@ function ReviewForm() {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-
-        let imageValue = image
-        // إذا المستخدم اختار ملف جديد (File object)، حوّليه base64
-        if (image && typeof image !== 'string') {
-            imageValue = await convertToBase64(image)
-        }
-
         const reviewData = {
             title,
             text,
@@ -153,6 +135,18 @@ function ReviewForm() {
                         color=" var(--grey15)"
                         border=""
                         className="bh-bn" />
+                        <Button
+                        type="button"
+                        width="149px"
+                        name="Cancel"
+                        height="63px"
+                        fontSize="18px"
+                        borderRadius="6px"
+                        backgroundColor="var(--green50)"
+                        color=" var(--grey15)"
+                        onClick={() => navigate(-1)}>
+                        
+                        </Button>
                 </div>
             </form>
         </>
