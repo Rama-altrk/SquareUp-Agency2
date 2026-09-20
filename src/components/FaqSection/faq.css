@@ -263,6 +263,7 @@
     grid-row: 1;
     min-width: 0;
     max-width: 192px;
+    max-width: fit-content;
     font-size: 16px;
     line-height: 100%;
     align-self: center;
@@ -285,6 +286,7 @@
 
   .HM-faq-answer p {
     max-width: 310px;
+    max-width: fit-content;
     font-size: 14px;
     line-height: 150%;
   }

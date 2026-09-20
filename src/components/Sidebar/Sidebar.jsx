@@ -75,6 +75,11 @@ export default function Sidebar() {
                                     About
                                 </NavLink>
                             </li>
+                            <li>
+                                <NavLink to="/dashboard/users" onClick={() => setIsOpen(false)}>
+                                    Users
+                                </NavLink>
+                            </li>
                             
                         </ul>
                     </nav>

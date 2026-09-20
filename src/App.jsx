@@ -25,6 +25,7 @@ import AddAndEditFaq from './pages/Dashboards/DashboardHome/FaqSectionCrud/AddAn
 import AddAndEditWork from './pages/Dashboards/DashboardWork/AddAndEditWork/AddAndEditWork';
 import AddAndEditProcess from './pages/Dashboards/DashboardProcess/AddAndEditProcess/AddAndEditProcess';
 import AddAndEditAbout from './pages/Dashboards/DashboardAbout/AddAndEditAbout/AddAndEditAbout';
+import DashboardUsers from './pages/Dashboards/DashboardUsers/DashboardUsers';
 
 
 
@@ -86,6 +87,7 @@ function App() {
           <Route path='about' element={<DashboardAbout/>}/>
             <Route path='about/add' element={<AddAndEditAbout/>}/>
             <Route path='about/edit/:id' element={<AddAndEditAbout/>}/>
+          <Route path='users' element={<DashboardUsers/>}/>
         </Route>
         
       </Routes>
