@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import './ProjectCards.css';
 import '../../assets/styles/colors.css';
 import '../../assets/styles/fonts.css';
@@ -137,6 +137,9 @@ function ProjectCards({ isDashboard = false, onEdit, onDelete, projects }) {
   }, [projects]);
 
   const handleDelete = (id) => {
+    const isConfirmed = window.confirm("Are you sure from delete this card?");
+    if (!isConfirmed) return;
+
     const updated = items.filter((item) => String(item.id) !== String(id));
     setItems(updated);
     try {

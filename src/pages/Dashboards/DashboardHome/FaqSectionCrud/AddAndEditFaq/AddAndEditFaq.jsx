@@ -15,15 +15,6 @@ const DEFAULT_FAQ_ITEMS = [
   { id: 8, question: "Can you help with website or app maintenance and updates?", answer: "SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more." }
 ];
 
-const getNextAvailableId = (items) => {
-  const ids = new Set(items.map((item) => Number(item.id)));
-  let nextId = 1;
-  while (ids.has(nextId)) {
-    nextId++;
-  }
-  return nextId;
-};
-
 export default function AddAndEditFaq() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -55,11 +46,13 @@ export default function AddAndEditFaq() {
 
   const handleSave = (updatedFromForm) => {
     const existing = getStoredFaqs();
+    const targetId = updatedFromForm.originalId || updatedFromForm.id;
+
     const updatedList = existing.map((item) =>
-      String(item.id) === String(updatedFromForm.id)
-        ? { ...item, question: updatedFromForm.question, answer: updatedFromForm.answer }
+      String(item.id) === String(targetId)
+        ? { id: Number(updatedFromForm.id), question: updatedFromForm.question, answer: updatedFromForm.answer }
         : item
-    );
+    ).sort((a, b) => Number(a.id) - Number(b.id));
 
     localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedList));
     navigate(-1);
@@ -67,10 +60,9 @@ export default function AddAndEditFaq() {
 
   const handleAdd = (newFromForm) => {
     const existing = getStoredFaqs();
-    const nextId = getNextAvailableId(existing);
 
     const newItem = {
-      id: nextId,
+      id: Number(newFromForm.id),
       question: newFromForm.question,
       answer: newFromForm.answer
     };
