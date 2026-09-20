@@ -150,7 +150,7 @@
     grid-template-columns: 1fr;
     .bh-card{
   height: auto;
-  width: 100%;
+  max-width:  100%;
   border-left: 1px solid var(--grey15);
   padding: 40px 24px;
    .bh3{
