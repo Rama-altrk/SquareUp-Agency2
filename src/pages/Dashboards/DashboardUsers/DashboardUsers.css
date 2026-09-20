@@ -1,0 +1,12 @@
+.rtAllUsers{
+    display: grid;
+    /* flex-wrap: wrap; */
+    grid-template-columns: repeat(2 , 1fr);
+    gap: 20px;
+}
+
+@media screen and (max-width: 1440px) {
+    .rtAllUsers{
+        grid-template-columns: 1fr;
+    }
+}

@@ -3,21 +3,21 @@ import { HiMail } from "react-icons/hi";
 import './UserCard.css'
 
 
-export default function UserCard({id, fullName, email, message, reasons}) {
+export default function UserCard({className, id, fullName, email, message, reasons}) {
     return (
-        <div className="rtUserCard">
+        <div className={`${className} rtUserCard`}>
             <span className="rtUserId">{`#${id}`}</span>
             <div className="rtNameUser">
                 <FaUser className="rtIconUser"/>
                 <p className="rtFullName">{fullName}</p>
             </div>
             <div className="rtEmailUser">
-                <HiMail className="rtIconUser"/>
+                <HiMail className="rtIconUser" style={{fontSize: "20px"}}/>
                 <p>{email}</p>
             </div>
             <div className="rtMessageUser">
                 <p className="rtLabelMessage">MESSAGE:</p>
-                <p className="rtContentMessage">{`"${message}"`}</p>
+                <p className="rtContentMessage">{ message? `"${message}"` : "There is no message from this user"}</p>
             </div>
             <div className="rtReasons">
                 {reasons && reasons.length > 0 ? (
@@ -30,7 +30,7 @@ export default function UserCard({id, fullName, email, message, reasons}) {
                     </span>
                 ))
                 ) : (
-                <span >No options selected</span>
+                <p>No options selected</p>
                 )}
             </div>
         </div>
