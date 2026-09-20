@@ -6,11 +6,12 @@ import InputsField from "../InputsField/InputsField";
 import TextareaField from "../TextareaField/TextareaField";
 import './ContactForm.css';
 import { useState } from "react";
-import { useOutletContext } from "react-router-dom";
-import { setItemInLocalstorage , addToLocalstorage, getItemFromLocalstorage } from "../../utils/localstorage";
-
+/* import { useOutletContext } from "react-router-dom";
+import { setItemInLocalstorage , addToLocalstorage, getItemFromLocalstorage } from "../../utils/localstorage"
+ */
+import { addToLocalstorage, getItemFromLocalstorage } from "../../utils/localstorage";
 const USERS_KEY = "users"
-const ACTIVE_KEY = "activeUserName"
+/* const ACTIVE_KEY = "activeUserName" */
 export default function ContactForm() {
     const [formData , setFormData] = useState({
         fullName: "",
@@ -19,7 +20,7 @@ export default function ContactForm() {
         message: ""
     })
 
-    const { onSaveSuccess } = useOutletContext()
+    /* const { onSaveSuccess } = useOutletContext() */
 
     const myChange = (fieldName , e) => {
         setFormData({ ...formData, [fieldName]: e.target.value})
@@ -42,13 +43,15 @@ export default function ContactForm() {
         }
         console.log("Befor Saving", formData)
         try {
-            addToLocalstorage(USERS_KEY , formData)
+           /*  addToLocalstorage(USERS_KEY , formData)
             setItemInLocalstorage(ACTIVE_KEY, formData.fullName)
             console.log("after Saving" , getItemFromLocalstorage(USERS_KEY))
             console.log("active user name" , getItemFromLocalstorage(ACTIVE_KEY))
             if (onSaveSuccess) {
                 onSaveSuccess(formData.fullName)
-            }
+            } */
+           addToLocalstorage(USERS_KEY, formData);
+           console.log("after Saving", getItemFromLocalstorage(USERS_KEY));
             setFormData({fullName: "", email: "", reasons: [], message: ""})
             alert("Your data has been saved successfully")
         } catch (error) {
