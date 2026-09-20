@@ -174,7 +174,6 @@ export default function About() {
                     ))):(
                         <h3>No cards for appear</h3>
                     )}
-                
                 </div>
             </section>
             <CtaSection/>

@@ -8,5 +8,8 @@
     justify-content: center;
     align-items: center;
   border: none;
+  .bh-card{
+    border-left: 1px solid var(--grey15);
+  }
 }
 }

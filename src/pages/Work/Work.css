@@ -1,12 +1,11 @@
 .rtWorkHeading{
+    
     p{
         font-size: 20px !important;
     }
 }
 
-.rtWorkSquareUp{
 
-}
 
 @media screen and (max-width: 1440px) {
     .rtWorkHeading{
@@ -17,6 +16,7 @@
 }
 @media screen and (max-width: 992px) {
     .rtWorkHeading{
+        height: 212px !important;
         p{
             font-size: 14px !important;
         }

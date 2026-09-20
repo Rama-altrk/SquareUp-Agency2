@@ -1,14 +1,48 @@
 .rtProcessAndAboutForm{
     display: flex;
     flex-direction: column;
-    align-items: center;
+
+    /* align-items: center; */
     gap: 40px;
+}
+.rtBack{
+    font-weight: var(--fw-semibold);
+    padding: 24px 10px;
+    padding: 10px 24px;
+    margin-bottom: 20px;
+}
+
+.rtActionBtn{
+    display: flex;
+    gap: 20px;
+    align-items: start !important;
+    justify-content: start !important;
+    .rtSubmitForm{
+        padding: 10px 34px;
+        &:hover{
+            border-color: var(--green50) !important;
+            color: var(--green50) !important;
+        }
+    }
+    .rtCancelForm{
+        padding: 10px 34px;
+        &:hover{
+            border-color: var(--absolutefff) !important;
+            color: var(--absolutefff) !important;
+        }
+    }
 }
 
 @media screen and (max-width: 1440px) {
-    .rtSubmitAddForm{
-        width: 116px !important;
-        height: 49px !important;
+    .rtSubmitForm{
+        /* width: 116px !important; */
+        /* height: 49px !important; */
+        border-radius: 6px !important;
+        font-size: 14px !important;
+    }
+    .rtCancelForm{
+        /* width: 116px !important; */
+        /* height: 49px !important; */
         border-radius: 6px !important;
         font-size: 14px !important;
     }
@@ -16,11 +50,19 @@
 }
 
 @media screen and (max-width: 992px) {
-    .rtSubmitAddForm{
-        width: 116px !important;
+    .rtActionBtn{ 
+        /* flex-direction: column; */
         width: 100% !important;
-        height: 49px !important;
-        border-radius: 6px !important;
-        font-size: 14px !important;
+        .rtSubmitForm{
+            width: 100% !important;
+            border-radius: 6px !important;
+            font-size: 14px !important;
+        }
+        .rtCancelForm{
+            width: 100% !important;
+            border-radius: 6px !important;
+            font-size: 14px !important;
+        }
     }
+    
 }

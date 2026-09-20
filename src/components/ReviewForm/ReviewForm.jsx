@@ -77,8 +77,8 @@ function ReviewForm() {
           ← Back
         </button>
       </div>
-            <form action="" style={{ display: "flex", flexDirection: "column", gap: 10 }} onSubmit={handleSubmit}>
-                <div style={{ display: "flex", gap: 10 }} className='bh-row1'>
+            <form action="" style={{ display: "flex", flexDirection: "column", gap: '20px' }} onSubmit={handleSubmit}>
+                <div style={{ display: "flex", gap: '20px' }} className='bh-row1'>
                     <InputsField
                         className="ReviewTitle"
                         widthField="50%"
@@ -94,7 +94,7 @@ function ReviewForm() {
                         value={text}
                         onChange={(e) => setText(e.target.value)} />
                 </div>
-                <div style={{ display: "flex", gap: 10 }} className='bh-row2'>
+                <div style={{ display: "flex", gap: '20px' }} className='bh-row2'>
                     <InputsField
                         className=""
                         widthField="50%"
@@ -112,9 +112,7 @@ function ReviewForm() {
                         labelId="JobTitle"
                         value={JobTitle}
                         onChange={(e) => setJob(e.target.value)} />
-                </div>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10 }} className='bh-row3'>
-                    <InputsField
+                </div><InputsField
                         className=""
                         widthField="50%"
                         labelField="URL Profile Image"
@@ -124,28 +122,31 @@ function ReviewForm() {
                         onChange={(e) => setImage(e.target.value)}
                         
                     />
+                <div style={{ display: "flex", alignItems: "center", gap: '20px' }} className='bh-row3'>
+                    
                     <Button
                         type="submit"
                         name={isEditMode ? "Save Changes" : "Submit"}
-                        width="149px"
-                        height="63px"
+                        // width="149px"
+                        // height="63px"
                         fontSize="18px"
                         borderRadius="6px"
-                        backgroundColor="var(--green50)"
-                        color=" var(--grey15)"
-                        border=""
+                        backgroundColor="var(--grey12)"
+                        color=" var(--absolutefff)"
+                        border="1px solid var(--grey30)"
                         className="bh-bn" />
                         <Button
-                        type="button"
-                        width="149px"
-                        name="Cancel"
-                        height="63px"
-                        fontSize="18px"
-                        borderRadius="6px"
-                        backgroundColor="var(--green50)"
-                        color=" var(--grey15)"
-                        onClick={() => navigate(-1)}>
-                        
+                            type="button"
+                            // width="149px"
+                            name="Cancel"
+                            // height="63px"
+                            fontSize="18px"
+                            borderRadius="6px"
+                            className= "bh-bn-cancel"
+                            border="1px solid var(--grey30)"
+                            backgroundColor="var(--grey12)"
+                            color=" var(--grey30)"
+                            onClick={() => navigate(-1)}>
                         </Button>
                 </div>
             </form>

@@ -62,7 +62,7 @@ return (
                             </div>
                             <p>{service.contentCard}</p>
                         </div>
-                        <button className="bs-learn-more-btn">Learn More</button>
+                        <Link to="/work"><button className="bs-learn-more-btn">Learn More</button></Link>
                     </div>
                     <div className={`rtStorageActionServices ${classNameAction}`}>
                         <Link to={`${linkEdit}/${service.id}`} className='rtEditPen'

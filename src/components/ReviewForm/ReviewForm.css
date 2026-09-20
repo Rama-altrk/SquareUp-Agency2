@@ -1,3 +1,17 @@
+.bh-bn{
+    padding: 10px 34px;
+    &:hover{
+        border-color: var(--green50) !important;
+        color: var(--green50) !important;
+    }
+}
+.bh-bn-cancel{
+    padding: 10px 34px;
+    &:hover{
+        border-color: var(--absolutefff) !important;
+        color: var(--absolutefff) !important;
+    }
+}
 
 @media (max-width:992px) {
 
@@ -10,6 +24,14 @@
     }
     .bh-bn{
         margin-top: 20px;
+        width: 100%;
+        &:hover{
+            border-color: var(--green50) !important;
+            color: var(--green50) !important;
+        }
+    }
+    .bh-bn-cancel{
+        width: 100%;
     }
     
 }

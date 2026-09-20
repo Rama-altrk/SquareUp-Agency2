@@ -255,11 +255,12 @@ export default function Process() {
           
         </div>
         <div className='rtContainerShowProcess'>
-          <button 
-            className="rtShowProcess" 
-            onClick={() => setIsExpanded(!isExpanded)} >
-            {isExpanded ? "Show Less" : "Show More"}
-          </button>
+          {cards && cards.length > 4 && (
+            <button 
+              className="rtShowProcess" 
+              onClick={() => setIsExpanded(!isExpanded)} >
+              {isExpanded ? "Show Less" : "Show More"}
+            </button>)}
         </div>
       </section>
       <SquareUp 

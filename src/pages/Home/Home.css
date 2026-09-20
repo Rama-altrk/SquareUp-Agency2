@@ -7,4 +7,16 @@
     .container-Card{
         grid-template-columns: 1fr;
     }
+    .rtServiceHeading{
+        height: 188px !important;
+    }
+    .rtChooseHeading{
+        height: 212px !important;
+    }
+    .rtFeedbackHeading{
+        height: 270px !important;
+    }
+    .rtFaq{
+        height: 222px !important;
+    }
 }

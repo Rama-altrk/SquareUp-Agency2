@@ -120,6 +120,7 @@ export default function ContactForm() {
                 width= "100%"
                 value={formData.message}
                 onChange={(e)=>myChange("message" , e)}
+                required= {false}
             />
             <Button
                 name= "Submit"

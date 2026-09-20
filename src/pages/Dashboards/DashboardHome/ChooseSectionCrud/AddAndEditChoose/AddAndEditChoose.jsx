@@ -7,66 +7,74 @@ import Button from '../../../../../components/Button/Button'
 
 const CHOOSE_KEY = 'rtChooseStorage'
 export default function AddAndEditChoose() {
-  const {
-      cardImg, cardTitle, contentCard, setCardImg,
-      setCardTitle, setContentCard, cardToEdit, setCardToEdit,
-      mySubmit, navigate
-  } = useGenericImageCardForm(CHOOSE_KEY, '/dashboard/chooseUs')
-  
-  return (
-    <form className='rtChooseForm' onSubmit={mySubmit}>
-        <InputsField
-            labelId= "imgCard"
-            inputType= "text"
-            widthField= "100%"
-            labelField= "Enter your URL img"
-            value={cardImg}
-            onChange={(event) => setCardImg(event.target.value)} 
-        />
+    const {
+        cardImg, cardTitle, contentCard, setCardImg,
+        setCardTitle, setContentCard, cardToEdit, setCardToEdit,
+        mySubmit, navigate
+    } = useGenericImageCardForm(CHOOSE_KEY, '/dashboard/chooseUs')
 
-        <InputsField
-            labelId= "titleCard"
-            inputType= "text"
-            widthField= "100%"
-            labelField= "Please Enter your card title"
-            value = {cardTitle}
-            onChange={(event) => setCardTitle(event.target.value)} 
-        />
-        <TextareaField
-            width= "100%"
-            labelName="Please enter your card's content"
-            value={contentCard}
-            onChange={(event) => setContentCard(event.target.value)} 
-        />
-        <Button 
-            name= {cardToEdit ? "Save Change" : "add" }
-            width= "145px"
-            height= "63px"
-            borderRadius= "8px"
+    return (
+    <>
+        <Button
+            name="← Back"
+            borderRadius= "4px"
             border= "1px solid var(--green50)"
             backgroundColor= "var(--green50)"
-            color= "var(--grey10)"
-            fontSize= "18px"
-            type= "submit"
-            className= "rtSubmitAddChooseForm"
+            fontSize= "16px"
+            className="rtBack"
+            onClick={() => navigate(-1)}
         />
+        <form className='rtChooseForm' onSubmit={mySubmit}>
+            <InputsField
+                labelId= "imgCard"
+                inputType= "text"
+                widthField= "100%"
+                labelField= "Enter your URL img"
+                value={cardImg}
+                onChange={(event) => setCardImg(event.target.value)} 
+            />
 
-        {cardToEdit && (
-          <Button 
-            name= "Cencel"
-            width= "145px"
-            height= "63px"
-            borderRadius= "8px"
-            border= "1px solid var(--green50)"
-            backgroundColor= "var(--green50)"
-            color= "var(--grey10)"
-            fontSize= "18px"
-            type= "button"
-            onClick={() => navigate('/dashboard/chooseUs')}
-            className= "rtSubmitAddChooseForm"
-          />
-          )}
+            <InputsField
+                labelId= "titleCard"
+                inputType= "text"
+                widthField= "100%"
+                labelField= "Please Enter your card title"
+                value = {cardTitle}
+                onChange={(event) => setCardTitle(event.target.value)} 
+            />
+            <TextareaField
+                width= "100%"
+                labelName="Please enter your card's content"
+                value={contentCard}
+                onChange={(event) => setContentCard(event.target.value)} 
+            />
+            <div className='rtActionBtn'>
+                <Button 
+                    name= {cardToEdit ? "Save Change" : "add" }
+                    borderRadius= "8px"
+                    border= "1px solid var(--grey20)"
+                    backgroundColor= "var(--grey12)"
+                    color= "var(--absolutefff)"
+                    fontSize= "18px"
+                    type= "submit"
+                    className= "rtSubmitForm"
+                />
 
-    </form>
-  )
+                {cardToEdit && (
+                    <Button 
+                    name= "Cancel"
+                    borderRadius= "8px"
+                    border= "1px solid var(--grey20)"
+                    backgroundColor= "var(--grey12)"
+                    color= "var(--grey30)"
+                    fontSize= "18px"
+                    type= "button"
+                    onClick={() => navigate('/dashboard/chooseUs')}
+                    className= "rtCancelForm"
+                    />
+                )}
+            </div>
+        </form>
+    </>
+    )
 }
