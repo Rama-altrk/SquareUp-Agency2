@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Button from '../../../../components/Button/Button';
 import './FaqSectionCrud.css';
@@ -69,10 +69,17 @@ export default function FaqSectionCrud() {
   });
 
   const handleDelete = (targetId) => {
+    const isConfirmed = window.confirm("Are you sure from delete this card?");
+    if (!isConfirmed) return;
+
     setFaqs((prevFaqs) => {
-      const updatedData = prevFaqs.filter((item) => Number(item.id) !== Number(targetId));
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedData));
-      return updatedData;
+      const remainingItems = prevFaqs.filter((item) => Number(item.id) !== Number(targetId));
+      const reindexedData = remainingItems.map((item, index) => ({
+        ...item,
+        id: index + 1
+      }));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(reindexedData));
+      return reindexedData;
     });
   };
 

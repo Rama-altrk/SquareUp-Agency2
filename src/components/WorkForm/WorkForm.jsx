@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './WorkForm.css';
 
@@ -71,7 +71,6 @@ export default function WorkProjectForm({ onAdd, onSave, editingItem = null }) {
     };
 
     if (onAdd) onAdd(newProject);
-    navigate(-1);
   };
 
   const handleSaveChanges = (e) => {
@@ -91,7 +90,6 @@ export default function WorkProjectForm({ onAdd, onSave, editingItem = null }) {
     };
 
     if (onSave) onSave(updatedProject);
-    navigate(-1);
   };
 
   return (
@@ -149,6 +147,7 @@ export default function WorkProjectForm({ onAdd, onSave, editingItem = null }) {
           isTextarea={true}
           rows={4}
         />
+
         <div className="work-actions-group">
           {editingItem ? (
             <button 

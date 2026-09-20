@@ -17,15 +17,6 @@ const DEFAULT_FAQ_ITEMS = [
   { id: 8, question: "Can you help with website or app maintenance and updates?", answer: "SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more." }
 ];
 
-const getNextAvailableId = (items) => {
-  const ids = new Set(items.map((item) => Number(item.id)));
-  let nextId = 1;
-  while (ids.has(nextId)) {
-    nextId++;
-  }
-  return nextId;
-};
-
 export function InputsField({
   className = '',
   widthField = '100%',
@@ -75,20 +66,23 @@ export function InputsField({
   );
 }
 
-export default function FaqForm() {
+export default function FaqForm({ onAdd, onSave, editingItem }) {
   const navigate = useNavigate();
   const location = useLocation();
   const params = useParams();
 
-  const stateItem = location.state?.item || location.state?.faq;
+  const stateItem = editingItem || location.state?.item || location.state?.faq;
   const pathId = params.id || location.pathname.split('/').filter(Boolean).pop();
   const effectiveId = stateItem?.id || (!isNaN(pathId) ? pathId : null);
   const isEditMode = Boolean(effectiveId);
 
-  // دالة مساعدة لجلب البيانات الأولية فوراً قبل أول Render
   const getInitialData = () => {
     if (stateItem) {
-      return { question: stateItem.question || '', answer: stateItem.answer || '' };
+      return { 
+        id: stateItem.id || '', 
+        question: stateItem.question || '', 
+        answer: stateItem.answer || '' 
+      };
     }
     if (effectiveId) {
       try {
@@ -96,22 +90,34 @@ export default function FaqForm() {
         const list = stored ? JSON.parse(stored) : DEFAULT_FAQ_ITEMS;
         const current = list.find((el) => String(el.id) === String(effectiveId));
         if (current) {
-          return { question: current.question || '', answer: current.answer || '' };
+          return { 
+            id: current.id || '', 
+            question: current.question || '', 
+            answer: current.answer || '' 
+          };
         }
       } catch (err) {
         console.error('Error loading data:', err);
       }
     }
-    return { question: '', answer: '' };
+    return { id: '', question: '', answer: '' };
   };
 
-  const [question, setQuestion] = useState(() => getInitialData().question);
-  const [answer, setAnswer] = useState(() => getInitialData().answer);
+  const initialValues = getInitialData();
+  const [questionId, setQuestionId] = useState(initialValues.id);
+  const [question, setQuestion] = useState(initialValues.question);
+  const [answer, setAnswer] = useState(initialValues.answer);
 
   const handleSaveData = (e) => {
     e.preventDefault();
-    if (!question.trim() || !answer.trim()) {
-      alert('الرجاء تعبئة السؤال والإجابة');
+    if (!String(questionId).trim() || !question.trim() || !answer.trim()) {
+      alert('Please fill in the question number, question, and answer.');
+      return;
+    }
+
+    const parsedId = Number(questionId);
+    if (isNaN(parsedId) || parsedId <= 0) {
+      alert('Please enter a valid, positive question number.');
       return;
     }
 
@@ -119,22 +125,40 @@ export default function FaqForm() {
       const stored = localStorage.getItem(STORAGE_KEY);
       const list = stored ? JSON.parse(stored) : DEFAULT_FAQ_ITEMS;
 
+   
+      const isDuplicate = list.some(
+        (item) => Number(item.id) === parsedId && (!isEditMode || String(item.id) !== String(effectiveId))
+      );
+
+      if (isDuplicate) {
+        alert('This question number already exists, please choose another one.');
+        return;
+      }
+
+  
+      if (onSave && isEditMode) {
+        onSave({ id: parsedId, originalId: effectiveId, question: question.trim(), answer: answer.trim() });
+        return;
+      } else if (onAdd && !isEditMode) {
+        onAdd({ id: parsedId, question: question.trim(), answer: answer.trim() });
+        return;
+      }
+
       if (isEditMode) {
         const updated = list.map((item) => {
           if (String(item.id) === String(effectiveId)) {
             return {
-              ...item,
+              id: parsedId,
               question: question.trim(),
               answer: answer.trim()
             };
           }
           return item;
-        });
+        }).sort((a, b) => Number(a.id) - Number(b.id));
         localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
       } else {
-        const newId = getNextAvailableId(list);
         const newItem = {
-          id: newId,
+          id: parsedId,
           question: question.trim(),
           answer: answer.trim()
         };
@@ -161,6 +185,15 @@ export default function FaqForm() {
       </div>
 
       <form className="faq-form-content" onSubmit={handleSaveData}>
+        <InputsField
+          labelField="Question Number (ID)"
+          labelId="faq_number"
+          inputType="number"
+          placeholder="e.g. 1, 2, 9..."
+          value={questionId}
+          onChange={(e) => setQuestionId(e.target.value)}
+        />
+
         <InputsField
           labelField={isEditMode ? "Edit Question" : "Add Question"}
           labelId="faq_question"
